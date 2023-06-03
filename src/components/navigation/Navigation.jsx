@@ -1,17 +1,21 @@
 import React from "react";
 import { theme } from "../../theme/theme";
+import { style } from "./style";
 
 const Navigation = () => {
   return (
-    <div className="flex flex-row w-full justify-between mx-10 mt-5">
-      <div className="flex flex-row gap-3 cursor-pointer">
-        <div>HOME</div>
-        <div>ABOUT</div>
-        <div>CONTACT US</div>
-        <div>SUPPORT</div>
+    <div className={style.navigation}>
+      <div>
+        <img src="" alt="logo here" />
+      </div>
+      <div className="flex flex-row gap-5">
+        <div className={style.header}>HOME</div>
+        <div className={style.header}>ABOUT</div>
+        <div className={style.header}>CONTACT US</div>
+        <div className={style.header}>SUPPORT</div>
       </div>
       <div>
-        <button className={theme.button.submit}>LOGIN</button>
+        <button className={theme.submitBtn}>LOGIN</button>
       </div>
     </div>
   );
