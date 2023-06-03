@@ -6,11 +6,9 @@ import { theme } from "../../theme/theme";
 const Home = () => {
   return (
     <div>
-      <Navigation />
-
       {/* HERO */}
       <section
-        className={`flex flex-row justify-around items-center h-screen `}
+        className={`flex flex-col justify-around items-center h-screen lg:flex-row`}
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: "cover",
@@ -19,7 +17,7 @@ const Home = () => {
         }}
       >
         <div>
-          <p className="text-6xl text-white font-bold w-[500px]">
+          <p className="text-4xl text-white font-bold md:w-[500px] w-50 text-center md:text-left md:text-6xl">
             "Unlock Financial Peace of Mind: Emergency Loans when You Need Them
             Most"
           </p>
