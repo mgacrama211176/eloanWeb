@@ -8,13 +8,15 @@ const Navigation = () => {
   return (
     <div className={style.navigation}>
       <div>
-        <img src="" alt="logo here" />
+        <Link to={"/"}>
+          <img src="" alt="logo here" />
+        </Link>
       </div>
       <motion.div
         className="flex flex-row gap-4"
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 2 }}
       >
         <Link to={"/"}>
           <div className={style.header}>HOME</div>
