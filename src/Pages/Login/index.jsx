@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { theme } from "../../theme/theme";
 import { loginStyle } from "./styles";
 import { motion } from "framer-motion";
@@ -7,17 +7,23 @@ import { Link, useLocation } from "react-router-dom";
 const Login = () => {
   const location = useLocation();
   const client = location.state;
-  console.log(location);
 
   const [login, setLogin] = useState(true);
+
+  useEffect(() => {
+    client ? setLogin(false) : setLogin(true);
+  }, []);
+
   return (
     <div className={loginStyle.allCenter}>
       <div>
-        <div className="p-10 border m-2 flex flex-col gap-3 rounded-lg bg-[#0072C6] text-[#caffff] text-center">
+        <div className={`${loginStyle.container} bg-[#091E35]`}>
           {login ? (
             <>
               <p className={loginStyle.title}>WELCOME BACK!</p>
-              <p>Welcome back! Please enter your details!</p>
+              <p className={theme.secondaryColorText}>
+                Welcome back! Please enter your details!
+              </p>
             </>
           ) : (
             <>
@@ -40,14 +46,13 @@ const Login = () => {
                 placeholder="Address"
                 className={theme.inputs}
               />
-              <input
-                type="text"
-                placeholder="Phone number"
-                className={theme.inputs}
-              />
             </>
           )}
-          <input type="text" placeholder="Email" className={theme.inputs} />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            className={theme.inputs}
+          />
           <input
             type="password"
             placeholder="Password"

@@ -2,8 +2,10 @@ import React from "react";
 import { theme } from "../../theme/theme";
 import { homeStyle } from "./styles";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+  const nav = useNavigate();
   return (
     <div>
       {/* HERO */}
@@ -15,7 +17,11 @@ const Home = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 3 }}
             >
-              "Unlock Financial Peace of Mind:
+              "Unlock{" "}
+              <span className={`${theme.secondaryColorText} underline`}>
+                Financial Peace of Mind
+              </span>{" "}
+              :
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: -600 }}
@@ -24,7 +30,10 @@ const Home = () => {
               options={{ loop: Infinity }}
             >
               <span className="z-0 relative">
-                Emergency Loans when You Need Them Most"
+                <span className={`${theme.secondaryColorText} underline`}>
+                  Emergency Loans{" "}
+                </span>
+                when You Need Them Most"
               </span>
             </motion.div>
           </p>
@@ -34,11 +43,12 @@ const Home = () => {
           animate={{ opacity: 1, y: [200, -50, 0] }}
           transition={{ duration: 1 }}
         >
-          <Link to={{ pathname: "login", state: true }}>
-            <button className={`${theme.submitBtn} ${theme.herobtnText}`}>
-              Apply Now!
-            </button>
-          </Link>
+          <button
+            className={`${theme.submitBtn} ${theme.herobtnText}`}
+            onClick={() => nav("login", { state: true })}
+          >
+            Apply Now!
+          </button>
         </motion.div>
       </section>
     </div>
