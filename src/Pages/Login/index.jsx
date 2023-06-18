@@ -15,7 +15,12 @@ const Login = () => {
   }, []);
 
   return (
-    <div className={loginStyle.allCenter}>
+    <motion.div
+      className={loginStyle.allCenter}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.75 }}
+    >
       <div>
         <div className={`${loginStyle.container} bg-[#091E35]`}>
           {login ? (
@@ -70,7 +75,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
