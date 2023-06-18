@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 //pages
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import Forgot from "./Pages/ForgotPass";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgot" element={<Forgot />} />
         </Routes>
       </BrowserRouter>
     </div>
