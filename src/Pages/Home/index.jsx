@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { theme } from "../../theme/theme";
 import { homeStyle } from "./styles";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ setUser }) => {
   const nav = useNavigate();
+
+  useEffect(() => {
+    setUser(false);
+  }, []);
+
   return (
     <div>
       {/* HERO */}
       <section className={homeStyle.container}>
         <div>
-          <p className={homeStyle.textContainer}>
-            <motion.div
+          <div className={homeStyle.textContainer}>
+            <motion.p
               initial={{ opacity: 0, x: 600 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 3 }}
@@ -22,8 +27,8 @@ const Home = () => {
                 Financial Peace of Mind
               </span>{" "}
               :
-            </motion.div>
-            <motion.div
+            </motion.p>
+            <motion.p
               initial={{ opacity: 0, x: -600 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 3 }}
@@ -35,8 +40,8 @@ const Home = () => {
                 </span>
                 when You Need Them Most"
               </span>
-            </motion.div>
-          </p>
+            </motion.p>
+          </div>
         </div>
         <motion.div
           initial={{ opacity: 0 }}

@@ -19,6 +19,10 @@ const Login = () => {
     client ? setLogin(false) : setLogin(true);
   }, []);
 
+  const onSubmit = () => {
+    nav("/userRoute/dashboard");
+  };
+
   return (
     <motion.div
       className={loginStyle.allCenter}
@@ -144,7 +148,9 @@ const Login = () => {
           )}
 
           <div className="absolute bottom-4 gap-4 flex flex-col">
-            <button className={theme.submitBtn}>Submit</button>
+            <button className={theme.submitBtn} onClick={onSubmit}>
+              Submit
+            </button>
 
             <div className="flex flex-col items-center">
               <p>{login ? "Not yet registered?" : "Already registered?"}</p>
