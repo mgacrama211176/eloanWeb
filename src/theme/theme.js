@@ -6,4 +6,5 @@ export const theme = {
   allCenter: `flex justify-center`,
   primaryColorText: `text-[#091E35]`,
   secondaryColorText: `text-[#BA9348]`,
+  primary: `#091E35`,
 };
